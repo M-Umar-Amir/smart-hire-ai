@@ -1,4 +1,13 @@
 import streamlit as st
+import subprocess
+import spacy
+
+# Ensure spaCy model is available before importing bias_agent
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+
 from agents.text_agent import generate_job_ad
 from agents.bias_agent import detect_bias, suggest_replacements
 from agents.visual_agent import generate_banner
