@@ -1,7 +1,6 @@
-import spacy
+# Simple bias checker without spaCy for quick testing
 
-nlp = spacy.load("en_core_web_sm")
-
+# Lightweight bias lexicon
 BIAS_WORDS = {
     "young": "early-career or experienced",
     "energetic": "motivated or proactive",
